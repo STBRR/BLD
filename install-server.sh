@@ -45,7 +45,7 @@ function install {
         exit
     fi
 
-    sudo apt install software-properties-common
+    sudo apt install -y software-properties-common
     sudo dpkg --add-architecture i386
     sudo apt update -y && sudo apt install -y steamcmd
 
@@ -56,9 +56,7 @@ function install {
     # now steamcmd is installed, lets install battalion server from it.
     cd ~ && mkdir BattalionServerData && cd BattalionServerData
 
-    clear
-    banner
-    steamcmd +login anonymous +force_install_dir $(pwd) +app_update 805140 +quit
+    steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit
 
     if [ -f "steamclient.so"]; then
         clear
@@ -75,5 +73,6 @@ function install {
 # go ahead with the install
 clear
 banner
+echo "[*] This won't take long.. Confirm any prompts that may popup when installing steamcmd."
 sleep 1
 install
