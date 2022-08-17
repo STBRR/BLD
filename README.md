@@ -1,5 +1,5 @@
 ## Battalion: Legacy Deployer
-*Feel free to reach out on Discord: Liam#9934, I will respond when I am not busy*
+*Feel free to reach out on Discord: LIAM#9934, I will respond when I am not busy*
 
 *This has been tested on Debian 11 & Ubuntu 21.04*
 *Do **not** use on Ubuntu 22.04, `libssl` errors will drive you crazy. I'll get around to fixing it though.*
