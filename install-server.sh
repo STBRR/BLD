@@ -58,6 +58,9 @@ function install {
 
     steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit
 
+    mkdir ~/.steam/sdk64 && cp steamclient.so ~/.steam/sdk64/
+    cp steamclient.so Battalion/Binaries/Linux/
+
     clear
     banner
     echo "[*] Battalion Dedicated Server is installed!"
