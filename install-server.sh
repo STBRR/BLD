@@ -58,15 +58,11 @@ function install {
 
     steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit
 
-    if [ -f "steamclient.so"]; then
-        clear
-        banner
-        echo "[*] Battalion Dedicated Server is installed!"
-        echo "[*] You can launch the server with the 'launch-server.sh' script."
-        echo "[!] Thank you for using. Reach out on Discord if you need anything."
-    else
-        echo "[!] Something went wrong. Please re-run the script and try again."
-    fi
+    clear
+    banner
+    echo "[*] Battalion Dedicated Server is installed!"
+    echo "[*] You can launch the server with the 'launch-server.sh' script."
+    echo "[!] Thank you for using. Reach out on Discord if you need anything."
 
 }
 
