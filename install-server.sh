@@ -25,11 +25,6 @@ function banner {
 }
 
 function install {
-    # create a new user for steamcmd
-    adduser steam
-    usermod -aG sudo steam
-    su - steam
-
     # 'steamcmd' is within the non-free repo for debian and multiverse on ubuntu.
     if grep 'Debian' -q /etc/issue 2>/dev/null; then
         echo "You're running on Debian."
@@ -77,13 +72,8 @@ function install {
 
 }
 
-if [ `whoami` != root ]; then
-    banner
-    echo "Error: Please run this script as root or using sudo"
-    exit
-else
-    clear
-    banner
-    sleep 1
-    install
-fi
+# go ahead with the install
+clear
+banner
+sleep 1
+install
