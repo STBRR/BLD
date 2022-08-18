@@ -44,6 +44,13 @@ chmod +x launch.sh && chmod +x install.sh
 ./launch.sh -AdminPassword=Passw0rd -QueryPort=1337
 ```
 
+### Game Configs
+For the configurations found in `configs/` these need to be copied into `Battalion/Config` where the default configuration is stored and then can be executed as an additional argument within the `launch.sh` script.
+
+```
+./launch.sh -IniFile="/home/steam/BattalionServerData/Battalion/Config/DefaultGame_3v3.ini"
+```
+
 ## Further Development
 If you feel that something can be done better or could add some functionaity.
 Feel free to submit a PR.
