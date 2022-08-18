@@ -27,7 +27,6 @@ function banner {
 function install {
     # 'steamcmd' is within the non-free repo for debian and multiverse on ubuntu.
     if grep 'Debian' -q /etc/issue 2>/dev/null; then
-        echo "You're running on Debian."
         sudo echo "deb http://deb.debian.org/debian stretch main contrib non-free" >> /etc/aptsources.list
         sudo echo "deb-src http://deb.debian.org/debian stretch main contrib non-free" >> /etc/apt/sources.list
 
@@ -38,7 +37,6 @@ function install {
         sudo echo "deb-src http://security.debian.org/ stretch/updates main contrib non-free" >> /etc/apt/sources.list
         
     elif grep 'Ubuntu' -q /etc/issue 2>/dev/null; then 
-        echo "You're running on Ubuntu"
         sudo add-apt-repository multiverse
     else
         echo "You're probably running another distro that this script hasn't had in mind.."
@@ -64,7 +62,7 @@ function install {
     clear
     banner
     echo "[*] Battalion Dedicated Server is installed!"
-    echo "[*] You can launch the server with the 'launch-server.sh' script."
+    echo "[*] You can launch the server with the './launch-server.sh' script."
     echo "[!] Thank you for using. Reach out on Discord if you need anything."
 
 }
