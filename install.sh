@@ -32,16 +32,24 @@ function install {
         exit
     fi
 
+    # Install requirements for 'steamcmd'
     sudo apt install -y software-properties-common
     sudo dpkg --add-architecture i386
-    sudo apt update -y && sudo apt install -y steamcmd
+    sudo apt -y update && sudo apt install -y steamcmd
 
-    cd ~ && mkdir BattalionServerData && cd BattalionServerData
+
+    # Install Battalion: Legacy from 'steamcmd'
+    cd ~
+    mkdir BattalionServerData && cd BattalionServerData/
     steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit
 
-    mkdir ~/.steam/sdk64 && cp steamclient.so ~/.steam/sdk64/
-    cp steamclient.so Battalion/Binaries/Linux/
+    # Copy 'steamclient.so' to the correct locations
+    mkdir -p ~/.steam/sdk64
+    cp linux64/steamclient.so ~/.steam/sdk64/steamclient.so
+    cp linux64/steamclient.so Battalion/Binaries/Linux/
 
+    cd ../BLD
+    echo ""
     echo "[*] Battalion Dedicated Server is installed!"
     echo "[*] You can launch the server using './launch.sh'"
 }
