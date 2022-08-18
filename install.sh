@@ -33,15 +33,18 @@ function install {
     fi
 
     # Install requirements for 'steamcmd'
-    sudo apt install -y software-properties-common
-    sudo dpkg --add-architecture i386
-    sudo apt -y update && sudo apt install -y steamcmd
+    echo "[*] Installing Dependencies"
+    sudo apt install -y software-properties-common 2>/dev/null
+    sudo dpkg --add-architecture i386 2>/dev/null
+    echo "[*] Installing SteamCMD"
+    sudo apt -y update 2>/dev/null && sudo apt install -y steamcmd 2>/dev/null
 
 
     # Install Battalion: Legacy from 'steamcmd'
     cd ~
     mkdir BattalionServerData && cd BattalionServerData/
-    steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit
+    echo "[*] Installing Battalion: Legacy Dedicated Server (this might take a few mins.)"
+    steamcmd +force_install_dir $(pwd) +login anonymous +app_update 805140 +quit 2>/dev/null
 
     # Copy 'steamclient.so' to the correct locations
     mkdir -p ~/.steam/sdk64
