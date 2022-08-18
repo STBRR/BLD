@@ -19,6 +19,7 @@ Assuming you're running as `root` execute
 the following commands. If you **already** have a **non-root** user then feel free to **skip** these and move straight onto the **install**.
 
 ```
+apt -y update && apt -y install git
 adduser steam
 usermod -aG sudo steam
 su - steam
@@ -32,7 +33,7 @@ steam@localhost:~$
 ### Deploying a Server
 Execute the following commands to download the repository to your system and run the supplied install script.
 ```
-git clone https://github.com/STBRR/Battalion.git && cd Battalion
+git clone https://github.com/STBRR/BLD.git && cd BLD/
 chmod +x launch.sh && chmod +x install.sh
 ./install.sh
 ./launch.sh
