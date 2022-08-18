@@ -1,4 +1,4 @@
-# Battalion: Legacy Deployer
+# Battalion: Legacy Deployer (BLD)
 *This has been tested on **Debian 11** & **Ubuntu 21.04***
 
 Note: I first tested this on **Ubuntu 22.04** and ran into issues when launching with `libssl`. This appears to only be an issue in **22.04**
