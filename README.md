@@ -32,16 +32,15 @@ steam@localhost:~$
 ### Deploying a Server
 Execute the following commands to download the repository to your system and run the supplied install script.
 ```
-git clone https://github.com/STBRR/Battalion.git
-cd Battalion
-chmod +x launch-server.sh
-chmod +x install-server.sh && ./install-server.sh
-./launch-server.sh
+git clone https://github.com/STBRR/Battalion.git && cd Battalion
+chmod +x launch.sh && chmod +x install.sh
+./install.sh
+./launch.sh
 ```
 
 #### Passing Additional Arguments - *Thanks frostyNinja!*
 ```
-./launch-server.sh -AdminPassword=Passw0rd -QueryPort=1337
+./launch.sh -AdminPassword=Passw0rd -QueryPort=1337
 ```
 
 ## Further Development
