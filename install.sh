@@ -25,7 +25,7 @@ function banner {
 
 function install {
     if grep 'Debian' -q /etc/issue; then
-        sudo cat src/debian-sources.list >> /etc/apt/sources.list
+        sudo su -c "cat src/debian-sources.list >> /etc/apt/sources.list"
     elif grep 'Ubuntu' -q /etc/issue; then 
         sudo add-apt-repository multiverse
     else
